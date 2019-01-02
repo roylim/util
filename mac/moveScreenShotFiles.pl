@@ -1,9 +1,14 @@
 #!/usr/bin/perl
+##################################################
+# How to set
+#*/3 * * * * perl /Users/naver/mygit/util/mac/moveScreenShotFiles.pl >> /Users/naver/mygit/util/mac/moveScreenShotFiles.log 2>&1
+##################################################
+
 use strict;
 use POSIX 'strftime';
 use Time::Local;
 
-my @l = `ls ~/Desktop/*.png`; chomp @l;
+my @l = `ls ~/Desktop/*.png 2>/dev/null`; chomp @l;
 
 my $descPos = "~/Desktop/screenshot";
 system "mkdir -p $descPos";
